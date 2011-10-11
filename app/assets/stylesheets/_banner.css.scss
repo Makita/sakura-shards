@@ -1,0 +1,23 @@
+div#banner {
+  span {
+    float: left;
+    width: 30%;
+    height: 100%;
+  }
+  span.forty {
+    width: 40%;
+    height: 100%;
+  }
+  div#search_bar {
+    float: right;
+    height: 100%;
+    input#search_field {
+      height: 25px;
+      margin-top: 2px;
+    }
+    input#submit {
+      float: right;
+      margin: 2px 2px 0 0;
+    }
+  }
+}
