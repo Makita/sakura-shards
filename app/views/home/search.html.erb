@@ -1,0 +1,9 @@
+<h2>Showing results for: <%= params[:search] %></h2>
+<div id="output">
+  <% @search.results.each do |result| %>
+    <div class="result">
+      <%= link_to "[%s] Volume %d, Chapter %d" % [result.name, result.volume, result.chapter], result.url %>
+    </div>
+  <% end %>
+</div>
+<%= will_paginate(@search.results, :params => params) %>
