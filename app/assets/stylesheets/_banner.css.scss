@@ -17,6 +17,9 @@ div#banner {
     }
     input#submit {
       float: right;
+      height: 24px;
+      border-top: 1px solid white;
+      border-right: 1px solid white;
       margin: 2px 2px 0 0;
     }
   }

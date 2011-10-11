@@ -1,13 +1,18 @@
+/* Settings */
+$url_base_color: #F0F;
+$container_width: 1000px;
+$bg_color: #222;
+
 @import 'compass';
 
 @import 'mixins';
 
+@import 'home';
 @import 'banner';
+@import 'navbar';
 @import 'scans';
 
 /* Main Parts */
-$container_width: 1000px;
-$bg_color: #222;
 
 * { border: 0; margin: 0; padding: 0; }
 body {
@@ -36,6 +41,7 @@ div#cushion {
       padding-top: 50px;
       div#left_main {
         float: left;
+        width: 67%;
         padding-left: 20px;
       }
       div#cboxdiv {
@@ -95,12 +101,12 @@ div.clear {
   line-height: 0px;
   clear: both;
 }
+div.pagination {
+  width: 100%;
+  text-align: center;
+}
 
 /* URLs */
-
-$url_base_color: #F0F;
-
-@import 'navbar';
 
 div#left_main a, div#footer a {
   @include chameleon($url_base_color, lighten($url_base_color, 20%));
