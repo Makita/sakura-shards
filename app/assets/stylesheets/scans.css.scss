@@ -1,0 +1,15 @@
+div#latest {
+  div.update {
+    span.left {
+      float: left;
+      width: 390px;
+      overflow-x: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    span.right {
+      float: right;
+      padding-left: 50px;
+    }
+  }
+}

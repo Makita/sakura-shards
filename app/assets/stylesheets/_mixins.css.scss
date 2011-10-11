@@ -1,0 +1,35 @@
+@mixin gradient($first, $second) {
+  background: $first;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from($second), to($first));
+  background: -moz-linear-gradient(top, $second, $first);
+}
+@mixin chameleon($first, $second) {
+  color: $first;
+  -webkit-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear;
+  -o-transition: color 0.5s linear;
+  -ms-transition: color 0.5s linear;
+  transition: color 0.5s linear;
+  &:hover {
+    color: $second;
+  }
+}
+@mixin box_shadow($hoffset, $voffset, $blur, $color) {
+  -webkit-box-shadow: $hoffset $voffset $blur $color;
+  -moz-box-shadow: $hoffset $voffset $blur $color;
+  -o-box-shadow: $hoffset $voffset $blur $color;
+  -ms-box-shadow: $hoffset $voffset $blur $color;
+  box-shadow: $hoffset $voffset $blur $color;
+}
+@mixin bloat($first, $second) {
+  width: $first;
+  -webkit-transition: width 0.5s linear;
+  -moz-transition: width 0.5s linear;
+  -o-transition: width 0.5s linear;
+  -ms-transition: width 0.5s linear;
+  transition: width 0.5s linear;
+  &:hover {
+    width: $second;
+  }
+}

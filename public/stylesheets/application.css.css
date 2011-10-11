@@ -1,0 +1,157 @@
+/* line 3, ../../app/assets/stylesheets/scans.css.scss */
+div#latest div.update span.left {
+  float: left;
+  width: 420px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* line 10, ../../app/assets/stylesheets/scans.css.scss */
+div#latest div.update span.right {
+  float: right;
+  padding-left: 100px;
+}
+
+/* Mixins */
+/* Main Parts */
+/* line 35, ../../app/assets/stylesheets/application.css.scss */
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 36, ../../app/assets/stylesheets/application.css.scss */
+body {
+  background: #272727;
+  color: white;
+  font-size: 0.9em;
+}
+
+/* line 41, ../../app/assets/stylesheets/application.css.scss */
+div#cushion {
+  overflow-y: hidden;
+}
+/* line 43, ../../app/assets/stylesheets/application.css.scss */
+div#cushion div#container {
+  width: 1000px;
+  margin: auto;
+  background: #222222;
+  -webkit-box-shadow: 0px 0px 20px #111111;
+  -moz-box-shadow: 0px 0px 20px #111111;
+  -o-box-shadow: 0px 0px 20px #111111;
+  -ms-box-shadow: 0px 0px 20px #111111;
+  box-shadow: 0px 0px 20px #111111;
+}
+/* line 48, ../../app/assets/stylesheets/application.css.scss */
+div#cushion div#container div#banner {
+  width: 100%;
+  height: 100px;
+  background: black;
+}
+/* line 53, ../../app/assets/stylesheets/application.css.scss */
+div#cushion div#container div#content {
+  clear: both;
+  border-top: 1px solid #333;
+  padding-top: 50px;
+}
+/* line 57, ../../app/assets/stylesheets/application.css.scss */
+div#cushion div#container div#content div#left_main {
+  float: left;
+  padding-left: 20px;
+}
+/* line 61, ../../app/assets/stylesheets/application.css.scss */
+div#cushion div#container div#content div#cboxdiv {
+  float: right;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+/* line 65, ../../app/assets/stylesheets/application.css.scss */
+div#cushion div#container div#content div#cboxdiv h1 {
+  height: 20px;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 10px;
+  padding-right: 5px;
+  border-bottom: 1px solid #333;
+  text-align: center;
+  font-size: 40px;
+}
+/* line 75, ../../app/assets/stylesheets/application.css.scss */
+div#cushion div#container div#content div#cboxdiv iframe {
+  width: 200px;
+  border: #DBE2ED 1px solid;
+}
+/* line 80, ../../app/assets/stylesheets/application.css.scss */
+div#cushion div#container div#content div#footer {
+  clear: both;
+  background: #000;
+  padding: 3px 10px;
+  text-align: center;
+  font-size: 0.7em;
+}
+
+/* URLs */
+/* line 95, ../../app/assets/stylesheets/application.css.scss */
+div#left_main a, div#footer a {
+  color: fuchsia;
+  -webkit-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear;
+  -o-transition: color 0.5s linear;
+  -ms-transition: color 0.5s linear;
+  transition: color 0.5s linear;
+  text-decoration: none;
+}
+/* line 19, ../../app/assets/stylesheets/application.css.scss */
+div#left_main a:hover, div#footer a:hover {
+  color: #ff66ff;
+}
+
+/* line 99, ../../app/assets/stylesheets/application.css.scss */
+div#navbar {
+  float: left;
+  width: 998px;
+  overflow: hidden;
+  border: 1px solid #151515;
+  border-top: 2px solid #151515;
+  border-bottom: 2px solid #151515;
+  background: #222222;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#2a2a2a), to(#222222));
+  background: -moz-linear-gradient(top, #2a2a2a, #222222);
+}
+/* line 107, ../../app/assets/stylesheets/application.css.scss */
+div#navbar ul {
+  clear: left;
+  float: left;
+  text-align: center;
+  position: relative;
+  left: 50%;
+}
+/* line 113, ../../app/assets/stylesheets/application.css.scss */
+div#navbar ul li {
+  display: block;
+  float: left;
+  position: relative;
+  right: 50%;
+  width: 200px;
+  list-style: none;
+}
+/* line 120, ../../app/assets/stylesheets/application.css.scss */
+div#navbar ul li a {
+  display: block;
+  color: white;
+  -webkit-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear;
+  -o-transition: color 0.5s linear;
+  -ms-transition: color 0.5s linear;
+  transition: color 0.5s linear;
+  margin: 0 0 0 1px;
+  padding: 3px 10px;
+  line-height: 1.3em;
+  text-decoration: none;
+}
+/* line 19, ../../app/assets/stylesheets/application.css.scss */
+div#navbar ul li a:hover {
+  color: gray;
+}

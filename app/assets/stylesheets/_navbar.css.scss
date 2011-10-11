@@ -1,0 +1,33 @@
+div#navbar {
+  float: left;
+  width: $container_width - 2px;
+  overflow: hidden;
+  border: 1px solid darken($bg_color, 5%);
+  border-top: 2px solid darken($bg_color, 5%);
+  border-bottom: 2px solid darken($bg_color, 5%);
+  @include gradient($bg_color, lighten($bg_color, 3%));
+  ul {
+    clear: left;
+    float: left;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    li {
+      display: block;
+      float: left;
+      position: relative;
+      right: 50%;
+      width: 200px;
+      @include bloat(200px, 250px);
+      list-style: none;
+      a {
+        display: block;
+        @include chameleon(white, darken(white, 50%));
+        margin: 0 0 0 1px;
+        padding: 3px 10px;
+        line-height: 1.3em;
+        text-decoration: none;
+      }
+    }
+  }
+}

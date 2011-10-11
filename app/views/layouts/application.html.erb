@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sakura Shards Scans :: <%= @title %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "screen.css", :media => 'print' %>
+  <%= stylesheet_link_tag    "print.css", :media => 'print' %>
+  <!--[if IE]><%= stylesheet_link_tag "ie.css", :media => 'screen, projection ' %><![endif]-->
+  <%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Ubuntu" %>
+  <%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Poly" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="cushion">
+    <div id="container">
+      <%= render :partial => 'layouts/banner' %>
+
+      <%= render :partial => 'layouts/navbar' %>
+
+      <div id="content">
+        <div id="left_main">
+          <%= yield %>
+        </div>
+
+        <%= render :partial => 'layouts/cbox' %>
+
+        <%= render :partial => 'layouts/footer' %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
