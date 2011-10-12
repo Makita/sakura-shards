@@ -1,8 +1,8 @@
 @mixin gradient($first, $second) {
-  @include linear-gradient(color-stops($second, $first));
+  @include background-image(linear-gradient($second, $first));
 }
 @mixin chameleon($first, $second) {
-  @include transition(color, 0.5s, linear);
+  @include single-transition(color, 0.5s, linear);
   color: $first;
   &:hover {
     color: $second;
@@ -12,7 +12,7 @@
   @include single-box-shadow($color, $hoffset, $voffset, $blur);
 }
 @mixin bloat($first, $second) {
-  @include transition(width, 0.5s, linear);
+  @include single-transition(width, 0.5s, linear);
   width: $first;
   &:hover {
     width: $second;

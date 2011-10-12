@@ -2,6 +2,7 @@ Sakura::Application.routes.draw do
   root :to => 'home#index'
   match '/home(/:action)', :controller => :home
   match '/scans(/:action(/:filename))', :controller => :scans
+  match '/admin(/:action)', :controller => :admin
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

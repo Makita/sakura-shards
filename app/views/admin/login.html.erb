@@ -1,0 +1,6 @@
+<h3>The resource you attempted to access requires you to authenticate</h3>
+<%= form_tag :controller => 'admin', :action => 'authenticate' do %>
+  <div class="field"><%= label_tag :username %><%= text_field_tag :username %></div>
+  <div class="field"><%= label_tag :password %><%= password_field_tag :password %></div>
+  <div class="field"><%= submit_tag 'Login' %></div>
+<% end %>

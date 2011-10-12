@@ -1,0 +1,18 @@
+$url_base_color: #F0F;
+$container_width: 1000px;
+$bg_color: #222;
+
+div.field {
+  display: block;
+  float: left;
+  width: 300px;
+  margin-top: 5px;
+  padding-right: 200px;
+  label {
+    float: left;
+  }
+  input {
+    float: right;
+    background: lighten($bg_color, 40%);
+  }
+}
