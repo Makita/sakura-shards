@@ -7,3 +7,5 @@ tmp/
 *~
 solr/data
 *.lck
+vendor/
+public/assets/
