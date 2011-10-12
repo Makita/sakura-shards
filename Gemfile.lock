@@ -134,7 +134,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt-ruby (>= 3.0.1)
   coffee-rails (~> 3.1.0)
   compass!
   jquery-rails
