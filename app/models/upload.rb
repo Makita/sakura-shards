@@ -1,4 +1,4 @@
-class Uploads < ActiveRecord::Base
+class Upload < ActiveRecord::Base
   searchable do
     text :name
     integer :volume

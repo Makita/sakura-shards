@@ -4,6 +4,7 @@ class CreateUploads < ActiveRecord::Migration
       t.string :name
       t.integer :volume
       t.integer :chapter
+      t.string :url
 
       t.timestamps
     end

@@ -1,0 +1,6 @@
+<%= form_for :announcements, :url => { :action => 'make_announcement' } do |f| %>
+  <div class="field"><%= f.label :title, 'Title' %><%= f.text_field :title %></div>
+  <div class="field"><%= f.label :body, 'Body' %><%= f.text_area :body %></div>
+  <div class="field"><%= f.hidden_field :author, :value => session[:user] %></div>
+  <div class="field"><%= f.submit 'Submit', :id => 'submit' %></div>
+<% end %>

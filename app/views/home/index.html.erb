@@ -1,8 +1,11 @@
-<h2>Directory</h2>
-<pre>Sections under construction below:
--<%= link_to 'Scanlations page', :controller => 'scans', :action => 'index' %>
--<%= link_to 'Administration', :controller => 'admin', :action => 'index' %>
-
-Sections complete:
--<%= link_to 'Index', :action => 'index' %>
--<%= link_to 'Search', :action => 'search' %></pre>
+<div id="news">
+  <% @updates.each do |update| %>
+    <div class="update">
+      <h3><%= update.title %> <span>| posted <%= time_ago_in_words(update.created_at) %> ago by <%= update.author %> | <%= link_to pluralize(howmany_comments(update.id), "Comment"), :action => 'comment', :id => update.id %></span></h3>
+      <% unless session[:user].nil? %>
+        <span><%= link_to 'Edit', :action => 'edit', :id => update.id %> | <%= link_to 'Destroy', :action => 'destroy', :id => update.id %></span>
+      <% end %>
+      <p><%= update.body.html_safe %></h3>
+    </div>
+  <% end %>
+</div>

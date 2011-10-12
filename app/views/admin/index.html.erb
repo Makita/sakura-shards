@@ -1,1 +1,9 @@
-<h2>Index</h2>
+<span id="user_bar">» Currently logged in as <%= session[:user] %> | <%= link_to 'Logout', :action => 'logout' %></span>
+<h2>Admin Panel</h2>
+<pre>
+Scanlations:
+<%= link_to "Add new update", :action => 'add_update' %>
+
+Announcements:
+<%= link_to "Add new announcement", :action => 'announce' %>
+</pre>

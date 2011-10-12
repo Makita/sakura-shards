@@ -1,0 +1,30 @@
+<div id="news">
+  <div class="update">
+    <h3><%= @post.title %> <span>| posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.author %></span></h3>
+    <p><%= @post.body.html_safe %></p>
+  </div>
+</div>
+<h3>Post a comment</h3>
+<%= form_for :comment, :url => { :action => 'make_comment' } do |f| %>
+  <div class="field"><%= f.label :author, 'Name' %><%= f.text_field :author %></div>
+  <div class="field"><%= f.label :body, 'Body' %><%= f.text_area :body %></div>
+  <div class="field"><%= f.hidden_field :announcement_id, :value => params[:id] %></div>
+  <div class="field"><%= f.hidden_field :ip, :value => request.remote_ip %></div>
+  <div id="bot_field">
+    <p>If you can see this, do not touch the value below. It is to catch bots.</p>
+    <div class="field"><%= label_tag :email, 'E-mail' %><%= text_field_tag :email %></div>
+  </div>
+  <div class="field"><%= f.submit 'Submit', :id => 'submit' %></div>
+<% end %>
+<% unless @comments.nil? %>
+  <div id="comments">
+    <h3>Comments</h3>
+    <% @comments.each do |comment| %>
+      <div class="comment">
+        <p><%= comment.body %></p>
+        <span>Written by <%= comment.author %> <%= time_ago_in_words(comment.created_at) %> ago</span>
+      </div>
+    <% end %>
+    <%= will_paginate @comments %>
+  </div>
+<% end %>

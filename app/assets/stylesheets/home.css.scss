@@ -1,3 +1,40 @@
 div#output {
   min-height: 340px;
 }
+div#news {
+  div.update {
+    margin: 30px 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 30px;
+    }
+    span {
+      float: none;
+      font-size: 0.7em;
+      font-weight: normal;
+    }
+  }
+}
+div#comments {
+  width: 100%;
+  div.comment {
+    border-bottom: 1px solid #777;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+    span {
+      display: block;
+      width: 100%;
+      text-align: right;
+      font-size: 0.8em;
+    }
+  }
+}
+div#bot_field {
+  display: none;
+}

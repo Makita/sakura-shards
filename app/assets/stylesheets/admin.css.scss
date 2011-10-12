@@ -2,17 +2,31 @@ $url_base_color: #F0F;
 $container_width: 1000px;
 $bg_color: #222;
 
+span#user_bar {
+  font-size: 0.8em;
+}
 div.field {
   display: block;
   float: left;
-  width: 300px;
+  width: 100%;
   margin-top: 5px;
-  padding-right: 200px;
+  padding-right: 100px;
   label {
     float: left;
+    width: 20%;
   }
-  input {
-    float: right;
+  input, textarea {
+    float: left;
+    width: 40%;
     background: lighten($bg_color, 40%);
+  }
+  textarea {
+    height: 200px;
+    width: 80%;
+  }
+  input#submit {
+    float: right;
+    width: auto;
+    margin-bottom: 10px;
   }
 }

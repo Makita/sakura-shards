@@ -1,7 +1,7 @@
 class ScansController < ApplicationController
   def index
     @title = "Scanlations"
-    @latest = Uploads.find(:all, :order => 'id desc', :limit => 10)
+    @latest = Upload.find(:all, :order => 'id desc', :limit => 20)
   end
 
   def download

@@ -5,7 +5,23 @@ class AdminController < ApplicationController
     @title = "Admin Panel"
   end
 
+  def add_update
+    @title = "Add Update"
+  end
+  
+  def make_announcement
+    params[:announcements][:body] = params[:announcements][:body].gsub(/\n/, '<br />')
+    Announcement.create(params[:announcements])
+    redirect_to :action => 'index'
+  end
+
+  def create
+    Upload.create(params[:uploads])
+    redirect_to :action => 'index'
+  end
+
   def is_logged_in
+    session[:expiry] = Time.now + 20.minutes unless session[:user].blank? or session[:expiry] < Time.now
     return true unless session[:user].blank? or session[:expiry] < Time.now
     @title = "Login"
     render 'login'
@@ -24,6 +40,11 @@ class AdminController < ApplicationController
         session[:expiry] = Time.now + 20.minutes
       end
     end until check.nil?
+    redirect_to :action => 'index'
+  end
+
+  def logout
+    reset_session
     redirect_to :action => 'index'
   end
 end
