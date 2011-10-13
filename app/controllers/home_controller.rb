@@ -9,6 +9,7 @@ class HomeController < ApplicationController
   end
 
   def search
+    @title = "Search"
     array = Upload.explode(params[:search])
     @search = Upload.search do
       fulltext array.first unless array.first.blank?
