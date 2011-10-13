@@ -30,7 +30,7 @@ div#cushion {
   div#container {
     width: $container_width;
     margin: auto;
-    background: $bg_color;
+    background: $bg_color url('/assets/bg_corner.png') bottom right no-repeat;
     @include shadow(0px, 0px, 20px, #111);
     div#banner {
       width: 100%;
@@ -50,6 +50,10 @@ div#cushion {
         float: right;
         padding-right: 20px;
         margin-bottom: 10px;
+        @include opacity(0.1);
+        &:hover {
+          @include opacity(1);
+        }
         h1 {
           height: 20px;
           width: 70%;

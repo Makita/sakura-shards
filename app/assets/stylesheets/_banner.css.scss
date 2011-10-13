@@ -3,10 +3,18 @@ div#banner {
     float: left;
     width: 30%;
     height: 100%;
+    img {
+      height: 90%;
+      width: 90%;
+    }
   }
   span.forty {
     width: 40%;
     height: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+    }
   }
   div#search_bar {
     float: right;
