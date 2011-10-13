@@ -50,10 +50,7 @@ div#cushion {
         float: right;
         padding-right: 20px;
         margin-bottom: 10px;
-        @include opacity(0.1);
-        &:hover {
-          @include opacity(1);
-        }
+        @include fade_in(0.1, 1);
         h1 {
           height: 20px;
           width: 70%;

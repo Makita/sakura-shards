@@ -12,9 +12,16 @@
   @include single-box-shadow($color, $hoffset, $voffset, $blur);
 }
 @mixin bloat($first, $second) {
-  @include single-transition(width, 0.5s, linear);
+  @include single-transition(width 0.5s linear);
   width: $first;
   &:hover {
     width: $second;
+  }
+}
+@mixin fade_in($first, $second) {
+  @include single-transition(opacity 0.5s linear);
+  @include opacity($first);
+  &:hover {
+    @include opacity($second);
   }
 }

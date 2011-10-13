@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_filter :reset_expiry
+
   def index
     @title = "Light Shrouded in Darkness"
     @updates = Announcement.get_announcements

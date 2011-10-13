@@ -5,6 +5,13 @@ class AdminController < ApplicationController
     @title = "Admin Panel"
   end
 
+  def is_logged_in
+    session[:expiry] = Time.now + 20.minutes unless session[:user].nil? or session[:expiry] < Time.now
+    return true unless session[:user].blank? or session[:expiry] < Time.now
+    @title = "Login"
+    render 'login'
+  end
+
   def add_update
     @title = "Add Update"
   end
@@ -18,13 +25,6 @@ class AdminController < ApplicationController
   def create
     Upload.create(params[:uploads])
     redirect_to :action => 'index'
-  end
-
-  def is_logged_in
-    session[:expiry] = Time.now + 20.minutes unless session[:user].blank? or session[:expiry] < Time.now
-    return true unless session[:user].blank? or session[:expiry] < Time.now
-    @title = "Login"
-    render 'login'
   end
 
   def authenticate
