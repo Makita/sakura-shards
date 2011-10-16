@@ -36,10 +36,13 @@ class AdminController < ApplicationController
       check = userpass["user#{a}"]
       break if check.nil?
       if check["username"] == params[:username] and check["password"] == params[:password]
-        session[:user] = params[:username]
+        session[:user] = check["dispname"]
         session[:expiry] = Time.now + 20.minutes
       end
     end until check.nil?
+    puts "-------------------------------"
+    puts session[:user]
+    puts "-------------------------------"
     redirect_to :action => 'index'
   end
 
