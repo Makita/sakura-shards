@@ -18,8 +18,8 @@ div#banner {
   }
   div#search_bar {
     float: right;
-    height: 100%;
     input#search_field {
+      float: left;
       height: 25px;
       margin-top: 2px;
     }
