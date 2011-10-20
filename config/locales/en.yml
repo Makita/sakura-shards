@@ -1,5 +1,59 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  # Navbar
+  homepage: "Home"
+  scanlations_page: "Scanlations"
+  admin_page: "Admin"
+  faq_page: "FAQ"
+
+  # User bar
+  login_display: "Currently logged in as %{user}"
+  edit: "Edit"
+  destroy: "Destroy"
+  logout: "Logout"
+
+  # Index page and commenting
+  post_time: "posted %{time} ago by %{user}"
+  comment: "Comment"
+  comments: "Comments"
+  post_comment: "Post a comment"
+  name: "Name"
+  body: "Body"
+
+  # Scanlations Page
+  latest_updates: "Latest Updates"
+  scanlation: "[%{name}] Volume %{volume}, Chapter %{chapter}"
+  uploaded: "Uploaded %{time} ago"
+  previous: "Previous Page"
+  next: "Next Page"
+
+  # Admin Panel
+  admin_panel: "Admin Panel"
+  add_new_scanlation: "Add new update"
+  announcements: "Announcements"
+  add_new_announcement: "Post new announcement"
+
+  # General form stuff
+  login: "Please log in"
+  submit: "Submit"
+
+  # Cbox
+  chat: "Chat"
+
+  # Footer
+  affiliate: "Affiliates"
+  copyright: "Copyright"
+  rights: "All rights reserved."
+  render: "Renders courtesy of %{link1} and %{link2}."
+  designed_by: "website designed by"
+
+  # FAQ
+  who: "Who are you?"
+  who_ans: "We translate manga/manhwa to make it available to (1) those who cannot read the language and do not have it currently serialized in their language; or (2) those who are not near any bookstores and do not have the means to purchase manga through the internet."
+  what: "What is a scanlation?"
+  what_ans: "A scanlation is a translated and edited version of manga. It was started by fans for fans who could not read the original language (Japanese originally, now expanded to include Korean and Chinese)."
+  mirror: "Can I mirror your scanlations?"
+  mirror_ans: "Yes, go right ahead! It'll save me bandwidth and help spread the scanlations, which is the original intent of scanlating to begin with!"
+  links: "The links are down!"
+  links_ans: "If the links are down, just post a comment on the latest announcement with the relevant file name or link."
+  join: "Can I join your group?"
+  join_ans: "Unfortunately, we are not currently accepting any members."

@@ -18,7 +18,7 @@
       <div id="content">
         <div id="left_main">
           <% unless session[:user].blank? %>
-            <span id="user_bar">» Currently logged in as <%= session[:user] %> | <%= link_to 'Logout', :action => 'logout' %></span>
+            <span id="user_bar">» <%=t :login_display, :user => session[:user] %> | <%= link_to t(:logout), :action => 'logout' %></span>
           <% end %>
           <%= yield %>
         </div>

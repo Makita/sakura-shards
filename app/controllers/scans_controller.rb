@@ -6,6 +6,9 @@ class ScansController < ApplicationController
     @latest = Upload.find(:all, :order => 'id desc', :limit => 20)
   end
 
-  def download
+  def destroy
+    redirect_to :action => 'index' if session[:user].nil?
+    Upload.find(params[:id]).destroy
+    redirect_to :action => 'index'
   end
 end

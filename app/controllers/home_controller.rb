@@ -3,7 +3,6 @@ class HomeController < ApplicationController
 
   def index
     @title = "Light Shrouded in Darkness"
-    @updates = Announcement.get_announcements
   end
 
   def faq
@@ -23,7 +22,7 @@ class HomeController < ApplicationController
   end
 
   def comment
-    @post = Announcement.find_by_id(params[:id])
+    @post = get_updates(I18n.locale, params[:id])
     @comments = @post.comments.paginate(:page => params[:page], :per_page => 10).order('id desc')
   end
 
@@ -35,16 +34,28 @@ class HomeController < ApplicationController
 
   def edit
     @post = Announcement.find_by_id(params[:id])
+    @jap_ver = JapaneseVersion.find_by_announcements_id(params[:id])
   end
 
   def edit_announcement
     params[:announcements][:body] = params[:announcements][:body].gsub(/\n/, '<br />')
     Announcement.find_by_id(params[:id]).update_attributes(params[:announcements])
+    params[:japanese][:announcements_id] = params[:id]
+    params[:japanese][:body] = params[:japanese][:body].gsub(/\n/, '<br />')
+    jap_ver = JapaneseVersion.find_by_announcements_id(params[:id])
+    if jap_ver.nil?
+      JapaneseVersion.create(params[:japanese])
+    else
+      jap_ver.update_attributes(params[:japanese])
+    end
     redirect_to :action => 'index'
   end
 
   def destroy
+    redirect_to :action => 'index' if session[:user].nil?
     Announcement.find_by_id(params[:id]).destroy
+    jap_ver = JapaneseVersion.find_by_announcements_id(params[:id])
+    jap_ver.destroy unless jap_ver.nil?
     redirect_to :action => 'index'
   end
 end

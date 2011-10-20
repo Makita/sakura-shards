@@ -1,10 +1,10 @@
 <div id="navbar">
   <ul>
-    <li><%= back_to_home('Home') %></li>
-    <li><%= link_to 'Scanlations', :controller => 'scans', :action => 'index' %></li>
+    <li><%= back_to_home(t(:homepage)) %></li>
+    <li><%= link_to t(:scanlations_page), :controller => 'scans', :action => 'index' %></li>
     <% unless session[:user].nil? %>
-      <li><%= link_to 'Admin', :controller => 'admin', :action => 'index' %></li>
+      <li><%= link_to t(:admin_page), :controller => 'admin', :action => 'index' %></li>
     <% end %>
-    <li><%= link_to 'FAQ', :controller => 'home', :action => 'faq' %></li>
+    <li><%= link_to t(:faq_page), :controller => 'home', :action => 'faq' %></li>
   </ul>
 </div>

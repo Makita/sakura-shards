@@ -1,6 +1,6 @@
 <div id="footer">
   <div class="footer_left">
-    <h3>AFFILIATES</h3>
+    <h3><%=t :affiliate %></h3>
     <span class="footer_drop">
       <%= link_to "Batoto", 'http://www.batoto.com/' %> &middot; 
       <%= link_to "Fuwa Cake", 'http://www.fuwacake.com/' %>
@@ -8,15 +8,15 @@
   </div>
   <div class="footer_left">
     <span class="footer_top">
-      <%= image_tag 'usa.gif', :height => '20px', :width => '29px' %>
-      <%= image_tag 'jp_flag.jpg' %>
+      <%= link_to image_tag('usa.gif', :height => '20px', :width => '29px'), url_for(params.merge(:locale => :en)) %>
+      <%= link_to image_tag('jp_flag.jpg'), url_for(params.merge(:locale => 'jp')) %>
     </span>
     <br />
-    <span>Copyright &copy; 2011 <%= back_to_home("Sakura Shards") %>. All rights reserved.</span><br />
-    <span>Renders courtesy of <%= link_to 'Charny', 'http://hostinga.imagecross.com/image-hosting-07/3349KChew.png' %> and <%= link_to 'EISENbricher', 'http://sakurahana.com/forum/anime-renders/53292-toxic-girl.html' %>.</span>
+    <span><%=t :copyright %> &copy; 2011 <%= back_to_home("Sakura Shards") %>. <%=t :rights %></span><br />
+    <span><%=raw t(:render, :link1 => link_to('Charny','http://hostinga.imagecross.com/image-hosting-07/3349KChew.png'), :link2 => link_to('EISENbricher','http://sakurahana.com/forum/anime-renders/53292-toxic-girl.html')) %></span>
   </div>
   <div class="footer_right">
-    <span class="footer_top">website designed by</span>
+    <span class="footer_top"><%=t :designed_by %></span>
     <br />
     <span><%= image_tag 'fuwacake_logo.jpg' %></span>
   </div>

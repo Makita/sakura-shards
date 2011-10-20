@@ -19,7 +19,12 @@ class AdminController < ApplicationController
   
   def make_announcement
     params[:announcements][:body] = params[:announcements][:body].gsub(/\n/, '<br />')
-    Announcement.create(params[:announcements])
+    new = Announcement.create(params[:announcements])
+    unless params[:japanese][:body].blank?
+      params[:japanese][:announcements_id] = new.id
+      params[:japanese][:body] = params[:japanese][:body].gsub(/\n/, '<br />')
+      JapaneseVersion.create(params[:japanese])
+    end
     redirect_to :action => 'index'
   end
 
@@ -38,17 +43,10 @@ class AdminController < ApplicationController
       break if check.nil?
       if check["username"] == params[:username] and check["password"] == params[:password]
         session[:user] = check["dispname"]
+        session[:level] = check["level"]
         session[:expiry] = Time.now + 20.minutes
       end
     end until check.nil?
-    puts "-------------------------------"
-    puts session[:user]
-    puts "-------------------------------"
-    redirect_to :action => 'index'
-  end
-
-  def logout
-    reset_session
     redirect_to :action => 'index'
   end
 end

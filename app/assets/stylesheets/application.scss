@@ -76,6 +76,9 @@ div#cushion {
         padding: 3px 10px;
         text-align: center;
         font-size: 0.7em;
+        h3 {
+          text-transform: uppercase;
+        }
         div.footer_left {
           width: 32%;
           float: left;

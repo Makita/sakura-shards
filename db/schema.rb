@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111012183709) do
+ActiveRecord::Schema.define(:version => 20111020183617) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(:version => 20111012183709) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "announcement_id"
+  end
+
+  create_table "japanese_versions", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "author"
+    t.integer  "announcements_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "uploads", :force => true do |t|

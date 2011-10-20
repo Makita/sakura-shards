@@ -1,9 +1,9 @@
 <div id="latest">
-  <h1>Latest Updates</h1>
+  <h1><%=t :latest_updates %></h1>
   <% @latest.each do |update| %>
     <div class="update">
-      <span class="left"><%= link_to get_dl_name(update.name, update.volume, update.chapter), get_dl_link(update) %></span>
-      <span class="right">Uploaded <%= time_ago_in_words(update.created_at) %> ago</span>
+      <span class="left"><%= link_to t(:scanlation, :name => update.name, :volume => update.volume, :chapter => update.chapter), get_dl_link(update) %></span>
+      <span class="right"><%=t :uploaded, :time => time_ago_in_words(update.created_at) %> | <%= link_to t(:destroy), :action => 'destroy', :id => update.id if session[:level] == 'admin' %></span>
     </div>
   <% end %>
 </div>

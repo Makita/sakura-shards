@@ -3,9 +3,4 @@ module ScansHelper
     name = array.name.gsub('_',' ')
     return Upload.where(:name => name, :volume => array.volume, :chapter => array.chapter).first.url
   end
-
-  def get_dl_name(name, volume, chapter)
-    link = "[%s] Volume %d, Chapter %d" % [name, volume, chapter]
-    return link
-  end
 end

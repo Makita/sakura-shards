@@ -1,8 +1,8 @@
-<h2>Admin Panel</h2>
+<h2><%=t :admin_panel %></h2>
 <pre>
-Scanlations:
-<%= link_to "Add new update", :action => 'add_update' %>
+<%=t :scanlations_page %>:
+<%= link_to t(:add_new_scanlation), :action => 'add_update' %>
 
-Announcements:
-<%= link_to "Add new announcement", :action => 'announce' %>
+<%=t :announcements %>:
+<%= link_to t(:add_new_announcement), :action => 'announce' %>
 </pre>

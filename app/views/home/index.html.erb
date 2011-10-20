@@ -1,9 +1,9 @@
 <div id="news">
-  <% @updates.each do |update| %>
+  <% get_updates(I18n.locale).each do |update| %>
     <div class="update">
-      <h3><%= update.title %> <span>| posted <%= time_ago_in_words(update.created_at) %> ago by <%= update.author %> | <%= link_to pluralize(howmany_comments(update.id), "Comment"), :action => 'comment', :id => update.id %></span></h3>
-      <% unless session[:user].nil? %>
-        <span><%= link_to 'Edit', :action => 'edit', :id => update.id %> | <%= link_to 'Destroy', :action => 'destroy', :id => update.id %></span>
+      <h3><%= update.title %> <span>| <%= posted_at(update.created_at, update.author) %> | <%= comments(update.id) %></span></h3>
+      <% if can_edit?(update.author) %>
+        <span><%= link_to t(:edit), :action => 'edit', :id => I18n.locale == :en ? update.id : update.announcements_id %> | <%= link_to t(:destroy), :action => 'destroy', :id => I18n.locale == :en ? update.id : update.announcements_id %></span>
       <% end %>
       <p><%= update.body.html_safe %></h3>
     </div>

@@ -1,6 +1,16 @@
 <%= form_for :announcements, :url => { :action => 'edit_announcement' } do |f| %>
   <div class="field"><%= f.label :title, 'Title' %><%= f.text_field :title, :value => @post.title %></div>
   <div class="field"><%= f.label :body, 'Body' %><%= f.text_area :body, :value => break_lines(@post.body) %></div>
+  <div class="field">
+    <%= label :japanese, :title, 'Japanese Title' %>
+    <%= text_field :japanese, :title, :value => @jap_ver.title unless @jap_ver.nil? %>
+    <%= text_field :japanese, :title if @jap_ver.nil? %>
+  </div>
+  <div class="field">
+    <%= label :japanese, :body, 'Japanese Version' %>
+    <%= text_area :japanese, :body, :value => break_lines(@jap_ver.body) unless @jap_ver.nil? %>
+    <%= text_area :japanese, :body if @jap_ver.nil? %>
+  </div>
   <div class="field"><%= hidden_field_tag :id, params[:id] %></div>
   <div class="field"><%= f.submit 'Submit', :id => 'submit' %></div>
 <% end %>
