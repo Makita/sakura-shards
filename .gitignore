@@ -9,3 +9,4 @@ solr/data
 *.lck
 vendor/
 public/assets/
+log/
