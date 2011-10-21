@@ -2,7 +2,7 @@
   <h1><%=t :latest_updates %></h1>
   <% @latest.each do |update| %>
     <div class="update">
-      <span class="left"><%= link_to t(:scanlation, :name => update.name, :volume => update.volume, :chapter => update.chapter), get_dl_link(update) %></span>
+      <span class="left"><%= link_to t(:scanlation, :name => JapaneseTitle.translate_title(update.name), :volume => update.volume, :chapter => update.chapter), get_dl_link(update) %></span>
       <span class="right"><%=t :uploaded, :time => time_ago_in_words(update.created_at) %><%=raw " | #{link_to t(:destroy), :action => 'destroy', :id => update.id}" if session[:level] == 'admin' %></span>
     </div>
   <% end %>

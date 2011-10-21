@@ -1,6 +1,6 @@
 <div id="news">
   <div class="update">
-    <h3><%= @novel.name %> | <%= which_title?(@novel) %></h3>
+    <h3><%= JapaneseTitle.translate_title(@novel.name) %> | <%= which_title?(@novel) %></h3>
     <span>
       <%= link_to t(:eng), url_for(params.merge(:method => 1)) %> | 
       <%= link_to t(:jap), url_for(params.merge(:method => 2)) %> | 

@@ -43,20 +43,21 @@ class AdminController < ApplicationController
     redirect_to :action => 'index'
   end
 
+  def add_title_relation
+    JapaneseTitle.create(params[:titles])
+    redirect_to :action => 'index'
+  end
+
   def authenticate
     require 'yaml'
     userpass = YAML.load(File.open('config/userpass.yml'))
-    a = 0
-    begin
-      a += 1
-      check = userpass["user#{a}"]
-      break if check.nil?
-      if check["username"] == params[:username] and check["password"] == params[:password]
-        session[:user] = check["dispname"]
-        session[:level] = check["level"]
-        session[:expiry] = Time.now + 20.minutes
-      end
-    end until check.nil?
+    check = userpass[params[:username]]
+    redirect_to :action => 'index' if check.nil?
+    if check["password"] == params[:password]
+      session[:user] = check["dispname"]
+      session[:level] = check["level"]
+      session[:expiry] = Time.now + 20.minutes
+    end
     redirect_to :action => 'index'
   end
 end

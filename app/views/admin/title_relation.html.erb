@@ -1,0 +1,5 @@
+<%= form_for :titles, :url => { :action => 'add_title_relation' } do |f| %>
+  <div class="field"><%= f.label :eng_title, t(:title) %><%= f.text_field :eng_title %></div>
+  <div class="field"><%= f.label :jp_title, t(:jtitle) %><%= f.text_field :jp_title %></div>
+  <div class="field"><%= f.submit t(:submit), :id => 'submit' %></div>
+<% end %>

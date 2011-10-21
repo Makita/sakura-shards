@@ -43,6 +43,7 @@ jp:
   add_new_novel: "新しいライトノベルを追加する"
   announcements: "お知らせ"
   add_new_announcement: "新しいお知らせを追加する"
+  add_title_relation: "タイトルの全訳を追加する"
 
   title: "タイトル"
   jtitle: "日本語のタイトル"

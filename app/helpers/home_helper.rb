@@ -36,6 +36,6 @@ module HomeHelper
   end
 
   def make_name(object)
-    return t :novel_link, :name => object.name, :volume => object.volume, :chapter => object.chapter
+    return t :novel_link, :name => JapaneseTitle.translate_title(object.name), :volume => object.volume, :chapter => object.chapter
   end
 end

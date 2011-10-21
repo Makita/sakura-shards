@@ -43,6 +43,7 @@ en:
   add_new_novel: "Add new light novel"
   announcements: "Announcements"
   add_new_announcement: "Post new announcement"
+  add_title_relation: "Add Title Translation"
 
   title: "Title"
   jtitle: "Japanese Title"
