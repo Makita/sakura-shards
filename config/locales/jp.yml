@@ -19,6 +19,7 @@ jp:
   written_by: "%{time}前、%{author}さん"
   name: "名前"
   body: "コンテント"
+  email: "メール"
 
   # Scanlations Page
   latest_updates: "直近のアップデート"
@@ -33,8 +34,19 @@ jp:
   announcements: "お知らせ"
   add_new_announcement: "新しいお知らせを追加する"
 
+  title: "タイトル"
+  jtitle: "日本語のタイトル"
+  jbody: "日本語のコンテント"
+
+  volume: "巻"
+  chapter: "話"
+  link: "リンク"
+
   # General form stuff
   login: "ログインして下さい"
+  username: "ユーザー名"
+  password: "パスワード"
+  login_button: "ログイン"
   submit: "送信"
 
   # Cbox

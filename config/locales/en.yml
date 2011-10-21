@@ -19,6 +19,7 @@ en:
   written_by: "Written by %{author} %{time}"
   name: "Name"
   body: "Body"
+  email: "E-mail"
 
   # Scanlations Page
   latest_updates: "Latest Updates"
@@ -33,8 +34,19 @@ en:
   announcements: "Announcements"
   add_new_announcement: "Post new announcement"
 
+  title: "Title"
+  jtitle: "Japanese Title"
+  jbody: "Japanese Version"
+
+  volume: "Volume"
+  chapter: "Chapter"
+  link: "Link"
+
   # General form stuff
   login: "Please log in"
+  username: "Username"
+  password: "Password"
+  login_button: "Login"
   submit: "Submit"
 
   # Cbox

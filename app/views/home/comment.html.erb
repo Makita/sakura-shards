@@ -12,7 +12,7 @@
   <div class="field"><%= f.hidden_field :ip, :value => request.remote_ip %></div>
   <div id="bot_field">
     <p>If you can see this, do not touch the value below. It is to catch bots.</p>
-    <div class="field"><%= label_tag :email, 'E-mail' %><%= text_field_tag :email %></div>
+    <div class="field"><%= label_tag :email, t(:email) %><%= text_field_tag :email %></div>
   </div>
   <div class="field"><%= f.submit t(:submit), :id => 'submit' %></div>
 <% end %>

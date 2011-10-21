@@ -1,8 +1,8 @@
 <%= form_for :announcements, :url => { :action => 'make_announcement' } do |f| %>
-  <div class="field"><%= f.label :title, 'Title' %><%= f.text_field :title %></div>
-  <div class="field"><%= f.label :body, 'Body' %><%= f.text_area :body %></div>
-  <div class="field"><%= label :japanese, :title, 'Japanese Title' %><%= text_field :japanese, :title %></div>
-  <div class="field"><%= label :japanese, :body, 'Japanese Version' %><%= text_area :japanese, :body %></div>
+  <div class="field"><%= f.label :title, t(:title) %><%= f.text_field :title %></div>
+  <div class="field"><%= f.label :body, t(:body) %><%= f.text_area :body %></div>
+  <div class="field"><%= label :japanese, :title, t(:jtitle) %><%= text_field :japanese, :title %></div>
+  <div class="field"><%= label :japanese, :body, t(:jbody) %><%= text_area :japanese, :body %></div>
   <div class="field"><%= f.hidden_field :author, :value => session[:user] %></div>
-  <div class="field"><%= f.submit 'Submit', :id => 'submit' %></div>
+  <div class="field"><%= f.submit t(:submit), :id => 'submit' %></div>
 <% end %>

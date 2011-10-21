@@ -1,7 +1,7 @@
 <%= form_for :uploads, :url => { :action => 'create' } do |f| %>
-  <div class="field"><%= f.label :name, "Title" %><%= f.text_field :name %></div>
-  <div class="field"><%= f.label :volume, "Volume" %><%= f.text_field :volume %></div>
-  <div class="field"><%= f.label :chapter, "Chapter" %><%= f.text_field :chapter %></div>
-  <div class="field"><%= f.label :url, "Link" %><%= f.text_field :url %></div>
-  <div class="field"><%= f.submit 'Submit', :id => 'submit' %></div>
+  <div class="field"><%= f.label :name, t(:title) %><%= f.text_field :name %></div>
+  <div class="field"><%= f.label :volume, t(:volume) %><%= f.text_field :volume %></div>
+  <div class="field"><%= f.label :chapter, t(:chapter) %><%= f.text_field :chapter %></div>
+  <div class="field"><%= f.label :url, t(:link) %><%= f.text_field :url %></div>
+  <div class="field"><%= f.submit t(:submit), :id => 'submit' %></div>
 <% end %>

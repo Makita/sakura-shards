@@ -1,6 +1,6 @@
 <h3><%t :login %></h3>
 <%= form_tag :controller => 'admin', :action => 'authenticate' do %>
-  <div class="field"><%= label_tag :username %><%= text_field_tag :username %></div>
-  <div class="field"><%= label_tag :password %><%= password_field_tag :password %></div>
-  <div class="field"><%= submit_tag 'Login', :id => 'submit' %></div>
+  <div class="field"><%= label_tag :username, t(:username) %><%= text_field_tag :username %></div>
+  <div class="field"><%= label_tag :password, t(:password) %><%= password_field_tag :password %></div>
+  <div class="field"><%= submit_tag t(:login_button), :id => 'submit' %></div>
 <% end %>
