@@ -2,8 +2,9 @@ jp:
   # Navbar
   homepage: "ホームページ"
   scanlations_page: "スキャンレーション"
+  light_novel_page: "ライトノベル"
   admin_page: "アドミン"
-  faq_page: "よくあるご質問"
+  faq_page: "よくある質問"
 
   # User bar
   login_display: "こんにちは、%{user}さん"
@@ -21,6 +22,8 @@ jp:
   body: "コンテント"
   email: "メール"
 
+  novel_link: "%{name} 第%{volume}巻, 第%{chapter}話"
+
   # Scanlations Page
   latest_updates: "直近のアップデート"
   scanlation: "[%{name}]第%{volume}巻、第%{chapter}話"
@@ -28,9 +31,16 @@ jp:
   previous: "前のページ"
   next: "次のページ"
 
+  # Light Novels Page
+  read: "%{series} 第%{volume}巻、第%{chapter}話を今読みます"
+  eng: "英語"
+  jap: "日本語"
+  both: "日本語と英語"
+
   # Admin Panel
   admin_panel: "アドミンパネル"
   add_new_scanlation: "新しいスキャンレーションを追加する"
+  add_new_novel: "新しいライトノベルを追加する"
   announcements: "お知らせ"
   add_new_announcement: "新しいお知らせを追加する"
 
@@ -42,12 +52,16 @@ jp:
   chapter: "話"
   link: "リンク"
 
+  series: "シリーズの名"
+
   # General form stuff
   login: "ログインして下さい"
   username: "ユーザー名"
   password: "パスワード"
   login_button: "ログイン"
   submit: "送信"
+
+  search: "検索"
 
   # Cbox
   chat: "会話"

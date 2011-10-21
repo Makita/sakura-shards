@@ -3,7 +3,7 @@
   <span class="forty"><%= image_tag "render.png" %></span>
   <div id="search_bar">
     <%= form_tag :controller => 'home', :action => 'search' do %>
-      <%= text_field_tag :search, '', :id => 'search_field', :placeholder => 'Search' %>
+      <%= text_field_tag :search, '', :id => 'search_field', :placeholder => t(:search) %>
       <%= submit_tag 'Submit', :id => 'submit', :type => 'image', :src => '/assets/search.jpg' %>
     <% end %>
   </div>

@@ -26,4 +26,16 @@ module HomeHelper
   def get_author(id)
     return Announcement.find_by_id(id).author
   end
+
+  def url_tags(body)
+    if body.include? '<novel>'
+      return body.gsub(/<novel>([0-9])<\/novel>/) { link_to(make_name(LightNovel.find($1)), :controller => 'light_novel', :action => 'read', :id => $1) }
+    else
+      return body
+    end
+  end
+
+  def make_name(object)
+    return t :novel_link, :name => object.name, :volume => object.volume, :chapter => object.chapter
+  end
 end

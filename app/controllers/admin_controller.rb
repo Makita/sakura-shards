@@ -16,6 +16,21 @@ class AdminController < ApplicationController
   def add_update
     @title = "Add Update"
   end
+
+  def create
+    Upload.create(params[:uploads])
+    redirect_to :action => 'index'
+  end
+
+  def add_novel
+    @title = "Add Light Novel"
+  end
+
+  def create_novel
+    params[:light_novels][:body] = params[:light_novels][:body].gsub(/\n/, '<br />')
+    LightNovel.create(params[:light_novels])
+    redirect_to :action => 'index'
+  end
   
   def make_announcement
     params[:announcements][:body] = params[:announcements][:body].gsub(/\n/, '<br />')
@@ -25,11 +40,6 @@ class AdminController < ApplicationController
       params[:japanese][:body] = params[:japanese][:body].gsub(/\n/, '<br />')
       JapaneseVersion.create(params[:japanese])
     end
-    redirect_to :action => 'index'
-  end
-
-  def create
-    Upload.create(params[:uploads])
     redirect_to :action => 'index'
   end
 

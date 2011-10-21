@@ -1,0 +1,11 @@
+<div id="news">
+  <div class="update">
+    <h3><%= @novel.name %> | <%= which_title?(@novel) %></h3>
+    <span>
+      <%= link_to t(:eng), url_for(params.merge(:method => 1)) %> | 
+      <%= link_to t(:jap), url_for(params.merge(:method => 2)) %> | 
+      <%= link_to t(:both), url_for(params.merge(:method => 3)) %>
+    </span>
+    <p><%=raw parse(@novel.body) %></p>
+  </div>
+</div>

@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 
   def comment
     @post = get_updates(params[:id])
-    @comments_hook = get_updates(:en, params[:id])
+    @comments_hook = get_updates(params[:id], :en)
     @comments = @comments_hook.comments.paginate(:page => params[:page], :per_page => 10).order('id desc')
   end
 

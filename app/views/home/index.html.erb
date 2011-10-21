@@ -1,6 +1,3 @@
-<%= puts "---------------------------------" %>
-<%= puts I18n.locale %>
-<%= puts "---------------------------------" %>
 <div id="news">
   <% @updates.each do |update| %>
     <div class="update">
@@ -8,7 +5,7 @@
       <% if can_edit?(get_author(en_or_jp(update))) %>
         <span><%= link_to t(:edit), :action => 'edit', :id => en_or_jp(update) %> | <%= link_to t(:destroy), :action => 'destroy', :id => en_or_jp(update) %></span>
       <% end %>
-      <p><%= update.body.html_safe %></h3>
+      <p><%= url_tags(update.body).html_safe %></h3>
     </div>
   <% end %>
 </div>

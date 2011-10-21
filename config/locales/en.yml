@@ -2,13 +2,14 @@ en:
   # Navbar
   homepage: "Home"
   scanlations_page: "Scanlations"
+  light_novel_page: "Light Novels"
   admin_page: "Admin"
   faq_page: "FAQ"
 
   # User bar
   login_display: "Currently logged in as %{user}"
   edit: "Edit"
-  destroy: "Destroy"
+  destroy: "Delete"
   logout: "Logout"
 
   # Index page and commenting
@@ -21,6 +22,8 @@ en:
   body: "Body"
   email: "E-mail"
 
+  novel_link: "%{name} Volume %{volume}, Chapter %{chapter}"
+
   # Scanlations Page
   latest_updates: "Latest Updates"
   scanlation: "[%{name}] Volume %{volume}, Chapter %{chapter}"
@@ -28,9 +31,16 @@ en:
   previous: "Previous Page"
   next: "Next Page"
 
+  # Light Novels Page
+  read: "Reading %{series} Volume %{volume}, Chapter #{chapter}"
+  eng: "English"
+  jap: "Japanese"
+  both: "Both"
+
   # Admin Panel
   admin_panel: "Admin Panel"
   add_new_scanlation: "Add new update"
+  add_new_novel: "Add new light novel"
   announcements: "Announcements"
   add_new_announcement: "Post new announcement"
 
@@ -42,12 +52,16 @@ en:
   chapter: "Chapter"
   link: "Link"
 
+  series: "Series"
+
   # General form stuff
   login: "Please log in"
   username: "Username"
   password: "Password"
   login_button: "Login"
   submit: "Submit"
+
+  search: "Search"
 
   # Cbox
   chat: "Chat"

@@ -17,8 +17,8 @@ div#navbar {
       float: left;
       position: relative;
       right: 50%;
-      width: 200px;
-      @include bloat(200px, 250px);
+      width: 150px;
+      @include bloat(150px, 200px);
       list-style: none;
       a {
         display: block;

@@ -2,6 +2,7 @@
   <ul>
     <li><%= back_to_home(t(:homepage)) %></li>
     <li><%= link_to t(:scanlations_page), :controller => 'scans', :action => 'index' %></li>
+    <li><%= link_to t(:light_novel_page), :controller => 'light_novel', :action => 'index' %></li>
     <% unless session[:user].nil? %>
       <li><%= link_to t(:admin_page), :controller => 'admin', :action => 'index' %></li>
     <% end %>
