@@ -22,4 +22,8 @@ module HomeHelper
       end
     end
   end
+
+  def get_author(id)
+    return Announcement.find_by_id(id).author
+  end
 end
