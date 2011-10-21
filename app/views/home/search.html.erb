@@ -1,8 +1,8 @@
-<h3>Showing results for: <%= params[:search] %></h3>
+<h3><%=t :showing_for %> <%= params[:search] %></h3>
 <div id="output">
   <% @search.results.each do |result| %>
     <div class="result">
-      <%= link_to "[%s] Volume %d, Chapter %d" % [result.name, result.volume, result.chapter], result.url %>
+      <%= link_to t(:scanlation, :name => JapaneseTitle.translate_title(result.name), :volume => result.volume, :chapter => result.chapter), result.url %>
     </div>
   <% end %>
 </div>

@@ -44,8 +44,10 @@ class AdminController < ApplicationController
   end
 
   def add_title_relation
-    JapaneseTitle.create(params[:titles])
-    redirect_to :action => 'index'
+    unless params[:titles][:eng_title].blank? or params[:titles][:jp_title].blank?
+      JapaneseTitle.create(params[:titles])
+      redirect_to :action => 'index'
+    end
   end
 
   def authenticate

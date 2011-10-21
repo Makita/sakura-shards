@@ -63,6 +63,7 @@ jp:
   submit: "送信"
 
   search: "検索"
+  showing_for: "元の検索キーワード："
 
   # Cbox
   chat: "会話"

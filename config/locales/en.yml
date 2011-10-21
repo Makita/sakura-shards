@@ -63,6 +63,7 @@ en:
   submit: "Submit"
 
   search: "Search"
+  showing_for: "Showing results for:"
 
   # Cbox
   chat: "Chat"
