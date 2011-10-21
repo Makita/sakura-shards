@@ -2,7 +2,7 @@
   <% @updates.each do |update| %>
     <div class="update">
       <h3><%= update.title %> <span>| <%= t :post_time, :time => time_ago_in_words(update.created_at), :user => get_author(en_or_jp(update)) %> | <%= comments(en_or_jp(update)) %></span></h3>
-      <% if can_edit?(update.author) %>
+      <% if can_edit?(get_author(en_or_jp(update))) %>
         <span><%= link_to t(:edit), :action => 'edit', :id => en_or_jp(update) %> | <%= link_to t(:destroy), :action => 'destroy', :id => en_or_jp(update) %></span>
       <% end %>
       <p><%= update.body.html_safe %></h3>
