@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @title = "Light Shrouded in Darkness"
-    @updates = get_updates(I18n.locale)
+    @updates = get_updates()
   end
 
   def faq
@@ -23,12 +23,12 @@ class HomeController < ApplicationController
   end
 
   def comment
-    @post = get_updates(I18n.locale, params[:id])
+    @post = get_updates(params[:id])
     @comments_hook = get_updates(:en, params[:id])
     @comments = @comments_hook.comments.paginate(:page => params[:page], :per_page => 10).order('id desc')
   end
 
-  def get_updates(locale = nil, id = nil)
+  def get_updates(id = nil, locale = I18n.locale)
     return JapaneseVersion.get_announcements if locale == :jp and id.nil?
     return JapaneseVersion.find_by_announcements_id(id) if locale == :jp
     return Announcement.find_by_id(id) unless id.nil?
