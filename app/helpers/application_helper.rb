@@ -14,4 +14,8 @@ module ApplicationHelper
   def will_paginate_with_i18n(collection = nil, options = {})
     will_paginate collection, options.merge(:previous_label => I18n.t(:previous), :next_label => I18n.t(:next))
   end
+
+  def en_or_jp(object)
+    return I18n.locale == :en ? object.id : object.announcements_id
+  end
 end

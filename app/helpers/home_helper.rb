@@ -1,11 +1,4 @@
 module HomeHelper
-  def get_updates(locale = nil, id = nil)
-    return JapaneseVersion.get_announcements if locale == :jp and id.nil?
-    return JapaneseVersion.find_by_announcements_id(id) if locale == :jp
-    return Announcement.find_by_id(id) unless id.nil?
-    return Announcement.get_announcements
-  end
-
   def howmany_comments(id)
     Comment.where(:announcement_id => id).count
   end

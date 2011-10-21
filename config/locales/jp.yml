@@ -12,10 +12,11 @@ jp:
   logout: "ログアウト"
 
   # Index page and commenting
-  post_time: "%{time}前、%{user}"
+  post_time: "%{time}前、%{user}さん"
   comment: "コメント"
   comments: "コメント"
   post_comment: "コメント化"
+  written_by: "%{time}前、%{author}さん"
   name: "名前"
   body: "コンテント"
 

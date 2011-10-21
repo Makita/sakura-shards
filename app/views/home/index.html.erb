@@ -1,9 +1,9 @@
 <div id="news">
-  <% get_updates(I18n.locale).each do |update| %>
+  <% @updates.each do |update| %>
     <div class="update">
-      <h3><%= update.title %> <span>| <%= posted_at(update.created_at, update.author) %> | <%= comments(update.id) %></span></h3>
+      <h3><%= update.title %> <span>| <%= posted_at(update.created_at, update.author) %> | <%= comments(en_or_jp(update)) %></span></h3>
       <% if can_edit?(update.author) %>
-        <span><%= link_to t(:edit), :action => 'edit', :id => I18n.locale == :en ? update.id : update.announcements_id %> | <%= link_to t(:destroy), :action => 'destroy', :id => I18n.locale == :en ? update.id : update.announcements_id %></span>
+        <span><%= link_to t(:edit), :action => 'edit', :id => en_or_jp(update) %> | <%= link_to t(:destroy), :action => 'destroy', :id => en_or_jp(update) %></span>
       <% end %>
       <p><%= update.body.html_safe %></h3>
     </div>

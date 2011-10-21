@@ -16,6 +16,7 @@ en:
   comment: "Comment"
   comments: "Comments"
   post_comment: "Post a comment"
+  written_by: "Written by %{author} %{time}"
   name: "Name"
   body: "Body"
 
