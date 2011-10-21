@@ -17,7 +17,7 @@ module HomeHelper
 
   def can_edit?(author)
     unless session[:user].nil?
-      if session[:level] == 'admin' or session[:dispname] == author
+      if session[:level] == 'admin' or session[:user] == author
         return 1
       end
     end
