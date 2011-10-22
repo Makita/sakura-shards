@@ -8,7 +8,7 @@ jp:
 
   # User bar
   login_display: "こんにちは、%{user}さん"
-  edit: "変更する"
+  edit: "編集"
   destroy: "消す"
   logout: "ログアウト"
 
