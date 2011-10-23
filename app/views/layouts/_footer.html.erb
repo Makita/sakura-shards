@@ -8,8 +8,8 @@
   </div>
   <div class="footer_left">
     <span class="footer_top">
-      <%= link_to image_tag('usa.gif', :height => '20px', :width => '29px'), url_for(params.merge(:locale => :en)) %>
-      <%= link_to image_tag('jp_flag.jpg'), url_for(params.merge(:locale => 'jp')) %>
+      <%= link_to image_tag('usa.gif', :height => '20px', :width => '29px'), :locale => :en %>
+      <%= link_to image_tag('jp_flag.jpg'), :locale => :jp%>
     </span>
     <br />
     <span><%=t :copyright %> &copy; 2011 <%= back_to_home("Sakura Shards") %>. <%=t :rights %></span><br />
