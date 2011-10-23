@@ -1,9 +1,10 @@
 Sakura::Application.routes.draw do
-  match '(:locale)/home(/:action)', :controller => :home
+  match '(:locale)/home(/:action(/:id))', :controller => :home
   match '(:locale)/scans(/:action(/:filename))', :controller => :scans
-  match '(:locale)/light_novels(/:action)', :controller => :light_novel
+  match '(:locale)/light_novels(/:action(/:id(/:method)))', :controller => :light_novel
   match '(:locale)/admin(/:action)', :controller => :admin
 
+  match ':locale' => 'home#index'
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

@@ -1,7 +1,7 @@
 <div id="news">
   <div class="update">
     <h3><%= @post.title %> <span>| <%=t :post_time, :time => time_ago_in_words(@comments_hook.created_at), :user => @comments_hook.author %></span></h3>
-    <p><%= @post.body.html_safe %></p>
+    <p><%= url_tags(@post.body).html_safe %></p>
   </div>
 </div>
 <h3><%=t :post_comment %></h3>
