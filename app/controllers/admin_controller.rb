@@ -2,19 +2,19 @@ class AdminController < ApplicationController
   before_filter :is_logged_in, :except => :authenticate
 
   def index
-    @title = "Admin Panel"
+    @title = t(:admin_panel)
   end
 
   def is_logged_in
     session[:expiry] = Time.now + 20.minutes unless session[:user].nil? or session[:expiry] < Time.now
     return true unless session[:user].blank? or session[:expiry] < Time.now
     reset_session
-    @title = "Login"
+    @title = t(:login_button)
     render 'login'
   end
 
   def add_update
-    @title = "Add Update"
+    @title = t(:add_new_scanlation).titleize
   end
 
   def create
@@ -23,13 +23,17 @@ class AdminController < ApplicationController
   end
 
   def add_novel
-    @title = "Add Light Novel"
+    @title = t(:add_new_novel).titleize
   end
 
   def create_novel
     params[:light_novels][:body] = params[:light_novels][:body].gsub(/\n/, '<br />')
     LightNovel.create(params[:light_novels])
     redirect_to :action => 'index'
+  end
+
+  def announce
+    @title = t(:add_new_announcement).titleize
   end
   
   def make_announcement
@@ -41,6 +45,10 @@ class AdminController < ApplicationController
       JapaneseVersion.create(params[:japanese])
     end
     redirect_to :action => 'index'
+  end
+
+  def title_relation
+    @title = t(:add_title_relation).titleize
   end
 
   def add_title_relation

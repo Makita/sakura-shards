@@ -6,7 +6,6 @@ module LightNovelHelper
   def parse(body)
     return body if params[:method] == '3'
     split = body.split(/\r/)
-    puts split.inspect
     en, jp = [], []
     a = 0
     split.each do |index|
@@ -17,16 +16,8 @@ module LightNovelHelper
         a = 0
         next
       end
-      if a % 2 == 1
-        jp.push(index)
-      else
-        en.push(index)
-      end
+      a % 2 == 1 ? jp.push(index) : en.push(index)
     end
-    if params[:method] == '2'
-      return jp.join
-    else
-      return en.join
-    end
+    return params[:method] == '2' ? jp.join : en.join
   end
 end

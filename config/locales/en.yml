@@ -1,4 +1,7 @@
 en:
+  group_name: "Sakura Shards"
+  page_title: "Light Shrouded in Darkness"
+
   # Navbar
   homepage: "Home"
   scanlations_page: "Scanlations"
@@ -43,7 +46,7 @@ en:
   add_new_novel: "Add new light novel"
   announcements: "Announcements"
   add_new_announcement: "Post new announcement"
-  add_title_relation: "Add Title Translation"
+  add_title_relation: "Add title translation"
 
   title: "Title"
   jtitle: "Japanese Title"

@@ -2,16 +2,16 @@ class HomeController < ApplicationController
   before_filter :reset_expiry
 
   def index
-    @title = "Light Shrouded in Darkness"
+    @title = t(:page_title)
     @updates = get_updates()
   end
 
   def faq
-    @title = "FAQ"
+    @title = t(:faq_page)
   end
 
   def search
-    @title = "Search"
+    @title = t(:search)
     array = Upload.explode(params[:search])
     @search = Upload.search do
       fulltext array.first unless array.first.blank?
@@ -23,6 +23,7 @@ class HomeController < ApplicationController
   end
 
   def comment
+    @title = t(:comments)
     @post = get_updates(params[:id])
     @comments_hook = get_updates(params[:id], :en)
     @comments = @comments_hook.comments.paginate(:page => params[:page], :per_page => 10).order('id desc')

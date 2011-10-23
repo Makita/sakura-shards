@@ -2,7 +2,7 @@ class ScansController < ApplicationController
   before_filter :reset_expiry
 
   def index
-    @title = "Scanlations"
+    @title = t(:scanlations_page)
     @latest = Upload.find(:all, :order => 'id desc', :limit => 20)
   end
 
