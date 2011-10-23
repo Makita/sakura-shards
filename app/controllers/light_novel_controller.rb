@@ -6,7 +6,7 @@ class LightNovelController < ApplicationController
 
   def read
     @novel = LightNovel.find(params[:id])
-    @title = t :read, :series => @novel.name, :volume => @novel.volume, :chapter => @novel.volume
+    @title = t :read, :series => JapaneseTitle.translate_title(@novel.name), :volume => @novel.volume, :chapter => @novel.volume
   end
 
   def destroy_novel
