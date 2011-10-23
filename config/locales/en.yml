@@ -20,7 +20,7 @@ en:
   comment: "Comment"
   comments: "Comments"
   post_comment: "Post a comment"
-  written_by: "Written by %{author} %{time}"
+  written_by: "Written by %{author} %{time} ago"
   name: "Name"
   body: "Body"
   email: "E-mail"
