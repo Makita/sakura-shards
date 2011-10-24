@@ -43,6 +43,7 @@ class HomeController < ApplicationController
   end
 
   def edit
+    @title = t(:edit)
     @post = Announcement.find_by_id(params[:id])
     @jap_ver = JapaneseVersion.find_by_announcements_id(params[:id])
   end
