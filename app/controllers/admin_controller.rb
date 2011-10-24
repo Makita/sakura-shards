@@ -60,10 +60,11 @@ class AdminController < ApplicationController
 
   def authenticate
     require 'yaml'
+    require 'bcrypt'
     userpass = YAML.load(File.open('config/userpass.yml'))
     check = userpass[params[:username]]
     redirect_to :action => 'index' if check.nil?
-    if check["password"] == params[:password]
+    if BCrypt::Password.new(check["password"]) == params[:password]
       session[:user] = check["dispname"]
       session[:level] = check["level"]
       session[:expiry] = Time.now + 20.minutes

@@ -13,6 +13,8 @@ gem 'sunspot_rails', '>= 1.2.1'
 
 gem 'will_paginate', '>= 3.0.2'
 
+gem 'bcrypt-ruby'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
