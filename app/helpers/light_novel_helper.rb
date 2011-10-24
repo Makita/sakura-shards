@@ -11,13 +11,13 @@ module LightNovelHelper
     split.each do |index|
       a += 1
       if index == '<br />'
-        jp.push('<br />')
-        en.push('<br />')
+        jp.push(index)
+        en.push(index)
         a = 0
         next
       end
       a % 2 == 1 ? jp.push(index) : en.push(index)
     end
-    return params[:method] == '2' ? jp.join : en.join
+    return params[:method] == '2' ? jp.join : en.join.sub(/<br \/>/, '')
   end
 end
