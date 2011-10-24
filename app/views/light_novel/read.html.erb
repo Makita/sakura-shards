@@ -6,6 +6,13 @@
       <%= link_to t(:jap), url_for(params.merge(:method => 2)) %> | 
       <%= link_to t(:both), url_for(params.merge(:method => 3)) %>
     </span>
+    <br />
+    <% if session[:level] == 'admin' %>
+      <span>
+        <%= link_to t(:edit), :action => :edit, :id => @novel.id %> | 
+        <%= link_to t(:destroy), :action => 'destroy_novel', :id => @novel.id %>
+      </span>
+    <% end %>
     <p><%=raw parse(@novel.body) %></p>
   </div>
 </div>

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
 
   def set_locale
+    I18n.default_locale = :en
     I18n.locale = params[:locale].to_sym unless params[:locale].nil?
   end
 

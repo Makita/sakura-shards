@@ -1,0 +1,10 @@
+<%= form_for :light_novels, :url => { :action => 'edit_light_novel' } do |f| %>
+  <div class="field"><%= f.label :name, t(:series) %><%= f.text_field :name, :value => @novel.name %></div>
+  <div class="field"><%= f.label :volume, t(:volume) %><%= f.text_field :volume, :value => @novel.volume %></div>
+  <div class="field"><%= f.label :chapter, t(:chapter) %><%= f.text_field :chapter, :value => @novel.chapter %></div>
+  <div class="field"><%= f.label :title, t(:title) %><%= f.text_field :title, :value => @novel.title %></div>
+  <div class="field"><%= f.label :japanese_title, t(:jtitle) %><%= f.text_field :japanese_title, :value => @novel.japanese_title %></div>
+  <div class="field"><%= f.label :body, t(:body) %><%= f.text_area :body, :value => break_lines(@novel.body) %></div>
+  <div class="field"><%= hidden_field_tag :id, :id, :value => params[:id] %></div>
+  <div class="field"><%= f.submit 'Submit', :id => 'submit' %></div>
+<% end %>

@@ -3,10 +3,6 @@ module HomeHelper
     Comment.where(:announcement_id => id).count
   end
 
-  def break_lines(string)
-    return string.gsub(/<br \/>/, '')
-  end
-
   def posted_at(created_at, author)
     t :post_time, :time => time_ago_in_words(created_at), :user => author
   end

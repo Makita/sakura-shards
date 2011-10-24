@@ -3,6 +3,10 @@ module ApplicationHelper
     return string.camelize.gsub(' ','_')
   end
 
+  def break_lines(string)
+    return string.gsub(/<br \/>/, '')
+  end
+
   def back_to_home(string)
     link_to string, :controller => 'home', :action => 'index'
   end

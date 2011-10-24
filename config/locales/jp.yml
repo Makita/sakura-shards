@@ -68,7 +68,7 @@ jp:
   search: "検索"
   showing_for: "元の検索キーワード："
 
-  edit: "編集中"
+  edit_title: "編集中"
 
   # Cbox
   chat: "会話"
