@@ -19,7 +19,7 @@ jp:
   post_time: "%{time}前、%{user}さん"
   comment: "コメント"
   comments: "コメント"
-  post_comment: "コメント化"
+  post_comment: "コメント"
   written_by: "%{time}前、%{author}さん"
   name: "名前"
   body: "コンテント"
