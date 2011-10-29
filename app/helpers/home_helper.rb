@@ -25,7 +25,9 @@ module HomeHelper
 
   def url_tags(body)
     if body.include? '<novel>'
-      return body.gsub(/<novel>([0-9])<\/novel>/) { link_to(make_name(LightNovel.find($1)), :controller => 'light_novel', :action => 'read', :id => $1) }
+      return body.gsub(/<novel>(\d{1,3})<\/novel>/) { link_to(make_name(LightNovel.find($1)), :controller => :light_novel, :action => :read, :id => $1) }
+    elsif body.include? '<translation>'
+      return body.gsub(/<translation>(\d{1,3})<\/translation>/) { link_to(make_name(Translation.find($1)), :controller => :scans, :action => :read, :id => $1) }
     else
       return body
     end

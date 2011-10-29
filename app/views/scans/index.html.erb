@@ -1,4 +1,15 @@
 <div id="latest">
+  <% unless @latest2.empty? %>
+    <h1><%=t :translation %></h1>
+    <% @latest2.each do |update| %>
+      <div class="update">
+        <span class="left"><%= link_to t(:scanlation, :name => JapaneseTitle.translate_title(update.name), :volume => update.volume, :chapter => update.chapter), :action => :read, :id => update.id %></span>
+        <span class="right"><%=t :uploaded, :time => time_ago_in_words(update.created_at) %><%=raw " | #{link_to t(:destroy), :action => 'destroy', :id => update.id}" if session[:level] == 'admin' %></span>
+      </div>
+    <% end %>
+    <%= will_paginate_with_i18n @latest2, :params => params.merge(:upload => 1), :param_name => :translation %>
+    <hr />
+  <% end %>
   <h1><%=t :latest_updates %></h1>
   <% @latest.each do |update| %>
     <div class="update">
@@ -6,4 +17,5 @@
       <span class="right"><%=t :uploaded, :time => time_ago_in_words(update.created_at) %><%=raw " | #{link_to t(:destroy), :action => 'destroy', :id => update.id}" if session[:level] == 'admin' %></span>
     </div>
   <% end %>
+  <%= will_paginate_with_i18n @latest, :params => params, :param_name => :upload %>
 </div>

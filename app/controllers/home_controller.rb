@@ -2,16 +2,16 @@ class HomeController < ApplicationController
   before_filter :reset_expiry
 
   def index
-    @title = t(:page_title)
+    @title = t :page_title
     @updates = get_updates()
   end
 
   def faq
-    @title = t(:faq_page)
+    @title = t :faq_page
   end
 
   def search
-    @title = t(:search)
+    @title = t :search
     array = Upload.explode(params[:search])
     @search = Upload.search do
       fulltext array.first unless array.first.blank?
@@ -23,7 +23,7 @@ class HomeController < ApplicationController
   end
 
   def comment
-    @title = t(:comments)
+    @title = t :comments
     @post = get_updates(params[:id])
     @comments_hook = get_updates(params[:id], :en)
     @comments = @comments_hook.comments.paginate(:page => params[:page], :per_page => 10).order('id desc')
@@ -37,13 +37,13 @@ class HomeController < ApplicationController
   end
 
   def make_comment
-    redirect_to :action => 'comment', :id => params[:comment][:announcement_id] unless params[:email].blank?
+    redirect_to :action => :comment, :id => params[:comment][:announcement_id] unless params[:email].blank?
     Comment.create(params[:comment])
-    redirect_to :action => 'comment', :id => params[:comment][:announcement_id]
+    redirect_to :action => :comment, :id => params[:comment][:announcement_id]
   end
 
   def edit
-    @title = t(:edit_title)
+    @title = t :edit_title
     @post = Announcement.find_by_id(params[:id])
     @jap_ver = JapaneseVersion.find_by_announcements_id(params[:id])
   end
@@ -54,19 +54,15 @@ class HomeController < ApplicationController
     params[:japanese][:announcements_id] = params[:id]
     params[:japanese][:body] = params[:japanese][:body].gsub(/\n/, '<br />')
     jap_ver = JapaneseVersion.find_by_announcements_id(params[:id])
-    if jap_ver.nil?
-      JapaneseVersion.create(params[:japanese])
-    else
-      jap_ver.update_attributes(params[:japanese])
-    end
-    redirect_to :action => 'index'
+    jap_ver.nil? ? JapaneseVersion.create(params[:japanese]) : jap_ver.update_attributes(params[:japanese])
+    redirect_to :action => :index
   end
 
   def destroy
-    redirect_to :action => 'index' if session[:user].nil?
+    redirect_to :action => :index if session[:user].nil?
     Announcement.find_by_id(params[:id]).destroy
     jap_ver = JapaneseVersion.find_by_announcements_id(params[:id])
     jap_ver.destroy unless jap_ver.nil?
-    redirect_to :action => 'index'
+    redirect_to :action => :index
   end
 end

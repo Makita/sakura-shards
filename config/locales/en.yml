@@ -30,7 +30,8 @@ en:
   # Scanlations Page
   latest_updates: "Latest Updates"
   scanlation: "[%{name}] Volume %{volume}, Chapter %{chapter}"
-  uploaded: "Uploaded %{time} ago"
+  translation: "Translations"
+  uploaded: "%{time} ago"
   previous: "Previous Page"
   next: "Next Page"
 
@@ -43,6 +44,7 @@ en:
   # Admin Panel
   admin_panel: "Admin Panel"
   add_new_scanlation: "Add new update"
+  add_new_translation: "Add new translation"
   add_new_novel: "Add new light novel"
   announcements: "Announcements"
   add_new_announcement: "Post new announcement"

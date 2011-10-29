@@ -1,6 +1,7 @@
 Sakura::Application.routes.draw do
   match '(:locale)/home(/:action(/:id))', :controller => :home
-  match '(:locale)/scans(/:action(/:filename))', :controller => :scans
+  match '(:locale)/scans/index(/:upload)(/:translation)', :controller => :scans, :action => :index
+  match '(:locale)/scans(/:action(/:id))', :controller => :scans
   match '(:locale)/light_novels(/:action(/:id(/:method)))', :controller => :light_novel
   match '(:locale)/admin(/:action)', :controller => :admin
 

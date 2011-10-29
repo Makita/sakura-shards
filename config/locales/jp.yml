@@ -30,6 +30,7 @@ jp:
   # Scanlations Page
   latest_updates: "直近のアップデート"
   scanlation: "[%{name}]第%{volume}巻、第%{chapter}話"
+  translation: "英訳"
   uploaded: "%{time}前"
   previous: "前のページ"
   next: "次のページ"
@@ -43,6 +44,7 @@ jp:
   # Admin Panel
   admin_panel: "アドミンパネル"
   add_new_scanlation: "新しいスキャンレーションを追加する"
+  add_new_translation: "新しい英訳を追加する"
   add_new_novel: "新しいライトノベルを追加する"
   announcements: "お知らせ"
   add_new_announcement: "新しいお知らせを追加する"

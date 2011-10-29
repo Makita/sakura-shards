@@ -18,6 +18,13 @@ $bg_color: #222;
 
 * { border: 0; margin: 0; padding: 0; }
 body {
+  hr {
+    float: left;
+    width: 100%;
+    height: 1px;
+    background: #777;
+    margin: 10px 0;
+  }
   background: lighten($bg_color, 2%);
   color: white;
   font: {
@@ -42,6 +49,9 @@ div#cushion {
       border-top: 1px solid #333;
       padding-top: 50px;
       div#left_main {
+        div.pagination {
+          clear: both;
+        }
         float: left;
         width: 67%;
         padding-left: 20px;

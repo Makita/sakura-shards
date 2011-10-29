@@ -2,9 +2,9 @@
   <div class="update">
     <h3><%= JapaneseTitle.translate_title(@novel.name) %> | <%= which_title?(@novel) %></h3>
     <span>
-      <%= link_to t(:eng), url_for(params.merge(:method => 1)) %> | 
-      <%= link_to t(:jap), url_for(params.merge(:method => 2)) %> | 
-      <%= link_to t(:both), url_for(params.merge(:method => 3)) %>
+      <%= link_to t(:eng), :id => params[:id], :method => 1 %> | 
+      <%= link_to t(:jap), :id => params[:id], :method => 2 %> | 
+      <%= link_to t(:both), :id => params[:id], :method => 3 %>
     </span>
     <br />
     <% if session[:level] == 'admin' %>

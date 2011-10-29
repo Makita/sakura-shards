@@ -1,0 +1,12 @@
+<div id="news">
+  <div class="update">
+    <h3><%= JapaneseTitle.translate_title(@translation.name) %> | <%= which_title?(@translation) %></h3>
+    <% if session[:level] == 'admin' %>
+      <span>
+        <%= link_to t(:edit), :action => :edit, :id => @translation.id %> | 
+        <%= link_to t(:destroy), :action => 'destroy_translation', :id => @translation.id %>
+      </span>
+    <% end %>
+    <p><%=raw @translation.body %></p>
+  </div>
+</div>
