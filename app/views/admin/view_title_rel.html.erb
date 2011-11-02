@@ -1,0 +1,19 @@
+<div id="latest">
+  <div class="update">
+    <span class="left"><h3><%= t(:title) %></h3></span>
+    <span class="right"><h3><%= t(:jtitle) %></h3></span>
+  </div>
+  <% @rels.each do |relation| %>
+    <div class="update">
+      <span class="left"><%= relation.eng_title %></span>
+      <span class="right">
+        <%= relation.jp_title %>
+        <% if session[:level] == 'admin' %>
+          | 
+          <%= link_to t(:edit), :action => :edit_title_rel, :id => relation.id %> | 
+          <%= link_to t(:destroy), :action => :destroy_title_rel, :id => relation.id %>
+        <% end %>
+      </span>
+    </div>
+  <% end %>
+</div>

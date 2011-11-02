@@ -21,6 +21,11 @@ class AdminController < ApplicationController
     @title = t(:add_new_translation).titleize
   end
 
+  def view_title_rel
+    @title = t(:view_rels).titleize
+    @rels = JapaneseTitle.get_all
+  end
+
   def create
     Upload.create(params[:uploads])
     redirect_to :action => :index
@@ -68,12 +73,29 @@ class AdminController < ApplicationController
     end
   end
 
+  def edit_title_rel
+    @rel = JapaneseTitle.find(params[:id])
+  end
+
+  def do_edit_rel
+    JapaneseTitle.find(params[:id]).update_attributes(params[:titles])
+    redirect_to :action => :view_title_rel
+  end
+
+  def destroy_title_rel
+    JapaneseTitle.find(params[:id]).destroy
+    redirect_to :action => :view_title_rel
+  end
+
   def authenticate
     require 'yaml'
     require 'bcrypt'
     userpass = YAML.load(File.open('config/userpass.yml'))
     check = userpass[params[:username]]
-    redirect_to :action => :index if check.nil?
+    if check.nil?
+      redirect_to :action => :index
+      return
+    end
     if BCrypt::Password.new(check["password"]) == params[:password]
       session[:user] = check["dispname"]
       session[:level] = check["level"]

@@ -49,6 +49,7 @@ en:
   announcements: "Announcements"
   add_new_announcement: "Post new announcement"
   add_title_relation: "Add title translation"
+  do_view_rels: "View title translations"
 
   title: "Title"
   jtitle: "Japanese Title"
@@ -59,6 +60,8 @@ en:
   link: "Link"
 
   series: "Series"
+
+  view_rels: "Viewing Title Relations"
 
   # General form stuff
   login: "Please log in"

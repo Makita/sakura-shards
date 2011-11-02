@@ -1,0 +1,6 @@
+<%= form_for :titles, :url => { :action => 'do_edit_rel' } do |f| %>
+  <div class="field"><%= f.label :eng_title, t(:title) %><%= f.text_field :eng_title, :value => @rel.eng_title %></div>
+  <div class="field"><%= f.label :jp_title, t(:jtitle) %><%= f.text_field :jp_title, :value => @rel.jp_title %></div>
+  <div class="field"><%= hidden_field_tag :id, :id, :value => params[:id] %></div>
+  <div class="field"><%= f.submit t(:submit), :id => 'submit' %></div>
+<% end %>

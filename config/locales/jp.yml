@@ -49,6 +49,7 @@ jp:
   announcements: "お知らせ"
   add_new_announcement: "新しいお知らせを追加する"
   add_title_relation: "タイトルの全訳を追加する"
+  do_view_rels: "タイトルの全訳を表示して"
 
   title: "タイトル"
   jtitle: "日本語のタイトル"
@@ -59,6 +60,8 @@ jp:
   link: "リンク"
 
   series: "シリーズの名"
+
+  view_rels: "タイトルの全訳を表示しています" 
 
   # General form stuff
   login: "ログインして下さい"
