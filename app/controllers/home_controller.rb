@@ -37,7 +37,9 @@ class HomeController < ApplicationController
   end
 
   def make_comment
-    redirect_to :action => :comment, :id => params[:comment][:announcement_id] unless params[:email].blank?
+    unless params[:email].blank? or params[:comment][:body].include? '[url=' or params[:comment][:body].include? '<a href='
+      redirect_to :action => :comment, :id => params[:comment][:announcement_id]
+    end
     Comment.create(params[:comment])
     redirect_to :action => :comment, :id => params[:comment][:announcement_id]
   end
