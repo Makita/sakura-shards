@@ -32,7 +32,7 @@ class HomeController < ApplicationController
   def get_updates(id = nil, locale = I18n.locale)
     return JapaneseVersion.get_announcements if locale == :jp and id.nil?
     return JapaneseVersion.find_by_announcements_id(id) if locale == :jp
-    return Announcement.find_by_id(id) unless id.nil?
+    return Announcement.find(id) unless id.nil?
     return Announcement.get_announcements
   end
 
