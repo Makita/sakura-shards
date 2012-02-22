@@ -7,7 +7,8 @@ gem 'rails', '3.1.1'
 
 gem 'mysql2'
 
-gem 'compass', :git => 'https://github.com/chriseppstein/compass.git'
+gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'no_rails_integration'
+gem 'compass-rails', :git => 'git://github.com/Compass/compass-rails.git'
 
 gem 'sunspot_rails', '>= 1.2.1'
 
