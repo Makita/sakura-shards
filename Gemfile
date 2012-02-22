@@ -15,6 +15,14 @@ gem 'will_paginate', '>= 3.0.2'
 
 gem 'bcrypt-ruby'
 
+group :test, :development do
+  gem 'rspec-rails', '>= 2.8.1'
+  group :test do
+    gem 'capybara', '>= 1.1.2'
+    gem 'factory_girl_rails', '>= 1.4.0'
+  end
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -14,7 +14,7 @@
     <p>If you can see this, do not touch the value below. It is to catch bots.</p>
     <div class="field"><%= label_tag :email, t(:email) %><%= text_field_tag :email %></div>
   </div>
-  <div class="field"><%= f.submit t(:submit), :id => 'submit' %></div>
+  <div class="field"><%= f.submit t(:submit), :id => 'submit', :class => 'make_comment' %></div>
 <% end %>
 <% unless @comments.nil? %>
   <div id="comments">
